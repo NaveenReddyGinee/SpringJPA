@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Demo10022_Spring_Boot_Spring_JPA_Queries
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: jagadish.sanjeevi
+Implementation-Vendor-Id: com.lkm.accenture
+Build-Jdk: 1.8.0_172
+Implementation-URL: http://projects.spring.io/spring-boot/Demo10022_Sp
+ ring_Boot_Spring_JPA_Queries/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

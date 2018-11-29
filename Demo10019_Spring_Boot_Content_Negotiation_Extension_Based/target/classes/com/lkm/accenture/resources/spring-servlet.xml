@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!-- Creating a ContentNegotiationManager to override the existing content manager -->
+	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean" primary="true">
+		
+		<!-- Marking true to use path extension to render the content -->
+		<property name="favorPathExtension" value="true" />
+		
+		<property name="favorParameter" value="false" />
+		<property name="ignoreAcceptHeader" value="true" />
+		
+		<!-- Setting the default content type to be display, 
+			 when explicit type is not requested or is not available-->
+		<property name="defaultContentType" value="application/xml" /> 
+		
+		<!--JAF :Java activation framework. Mark to true if implicit type media type mapping are needed  -->
+		<property name="useJaf" value="true" />
+		
+	</bean>
+	
+	<!-- Overriding the existing content manager with the one created above-->
+	<mvc:annotation-driven  content-negotiation-manager="contentNegotiationManager"/>
+</beans>
